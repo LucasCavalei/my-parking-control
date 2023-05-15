@@ -1,23 +1,23 @@
 package com.api.parkingcontrol.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.UUID;
 
 @Entity
-public class ParkingSpotModel {
 @Table(name = "TB_PARKING_SPOT")
  public class ParkingSpotModel implements Serializable{
     private static final long serialVersionUID = 1L;
-
-    @generatedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private UUID id;
-    @Column(nullable = false, unique=true, lenght=10)
+    @Column(nullable = false, unique=true, length=10)
     private String parkingSpotNumber;
-    @Column(nullable = false, unique=true, lenght=7)
-    private String licencePlateCar;
+    @Column(nullable = false, unique=true, length=7)
+    private String licensePlateCar;
     @Column (nullable = false, unique= true, length=70)
     private String BrandCar;
     @Column (nullable = false, unique= true, length=70)
@@ -26,11 +26,11 @@ public class ParkingSpotModel {
     private String colorCar;
     @Column (nullable = false)
     private LocalDateTime registrationDate;
-    @Column (nullable = false, lenght=130)
+    @Column (nullable = false, length=130)
     private String responsibleName;
-    @Column (nullable = false, lenght=30)
+    @Column (nullable = false, length=30)
     private String apartment;
-    @Column (nullable = false, lenght=30)
+    @Column (nullable = false, length=30)
     private String block;
 
     public UUID getId() {
@@ -49,12 +49,12 @@ public class ParkingSpotModel {
         this.parkingSpotNumber = parkingSpotNumber;
     }
 
-    public String getLicencePlateCar() {
-        return licencePlateCar;
+    public String getLicensePlateCar() {
+        return licensePlateCar;
     }
 
-    public void setLicencePlateCar(String licencePlateCar) {
-        this.licencePlateCar = licencePlateCar;
+    public void setLicensePlateCar(String licensePlateCar) {
+        this.licensePlateCar = licensePlateCar;
     }
 
     public String getBrandCar() {
@@ -113,4 +113,4 @@ public class ParkingSpotModel {
         this.block = block;
     }
 }
-}
+
