@@ -27,15 +27,9 @@ Registro de um carro por vaga: Não é permitido registrar mais de um carro em u
 
 ### 🛰️ Built With
 
-Spring Framework
-Spring Web
-Spring JPA
-Validation
-MySQL (used as the database)
 
 - Spring Framework
 - Spring Web
 - Spring JPA
 - Validation
-- MongoDb
 - MySQL (used as the database)
